@@ -1,0 +1,139 @@
+body{
+  background-color: black;
+}
+a{
+  text-decoration: none; /* Removes underline from links */
+  
+}
+#landmarks:hover
+{
+  background-color: #6FC276; /* soft green */
+  
+}
+#folklore:hover
+{
+  background-color: #9D00FF; /* Susano Purple*/
+}
+#yokai:hover
+{
+  background-color: #891522; /*Yokia red*/
+}
+#myths-legends:hover
+{
+  background-color: #FFD700; /* Myth Gold*/
+}
+.container {
+  
+    display: flex;
+    justify-content: space-between; /* Optional: Distributes remaining space evenly */
+    gap: 12px; /* Creates a 12px gap between the boxes */
+    flex-wrap: wrap; /* Allow boxes to wrap to the next row on small screens */
+    align-items: stretch;
+    /* Add padding to the container if you want space between boxes and container edges */
+    /* padding: 0 10px; */
+    padding-bottom: 2%;
+}
+
+/* Box styling - now applied directly to <a> elements */
+.box {
+    display: block; /* Make anchor behave like a block element */
+    /* Set a flexible width for 5 boxes within the container */
+    flex: 1 1 220px; /* grow, shrink, base-width */
+    min-width: 160px; /* ensures boxes wrap instead of squishing on small screens */
+    box-sizing: border-box;
+    font-family:  Expletus Sans;
+
+    background-color: #FFB7C5; /* Example background color */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* smooth hover effect */
+}
+
+
+/* Hover state for better UX */
+.box:hover {
+  background-color: #ff6f91; /* deeper pink for better contrast on hover */
+  ;
+}
+
+.box:focus {
+  outline: 2px solid #fff; /* visible focus indicator */
+  outline-offset: 2px;
+}
+
+h1{
+  color: white;
+  text-align: center;
+  font-family: 'Expletus Sans';
+}
+h2{
+  font-family:  Expletus Sans , cursive;
+}
+h3{
+  font-family:  Expletus Sans , cursive;
+  color: white;
+  
+}
+img{
+  max-width: 100%;
+  height: auto;
+  display: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive image for small devices */
+@media (max-width: 480px) {
+  img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+}
+
+/* Responsive image for medium devices */
+@media (min-width: 481px) and (max-width: 800px) {
+  img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+}
+
+/* Responsive breakpoints */
+/* Small devices: 1 column */
+@media (max-width: 480px) {
+  .container {
+    gap: 8px;
+  }
+  .box {
+    color: blanchedalmond;
+    flex: 1 1 100%;
+    min-width: 0; /* allow full width */
+    padding: 16px;
+  }
+}
+
+/* Medium devices: 2 columns */
+@media (min-width: 481px) and (max-width: 800px) {
+  .container {
+    gap: 10px;
+  }
+  .box {
+    flex: 1 1 48%; /* two columns with some gap */
+    min-width: calc(48% - 4px);
+  }
+}
+
+/* Large devices: keep the default flex behaviour */
+@media (min-width: 801px) {
+  .container {
+    gap: 12px;
+  }
+  .box {
+    flex: 1 1 220px;
+    min-width: 160px;
+  }
+}
